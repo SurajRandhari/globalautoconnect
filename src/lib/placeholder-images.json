@@ -2,39 +2,81 @@
   "placeholderImages": [
     {
       "id": "hero-car",
-      "description": "Modern sports car on a scenic road",
-      "imageUrl": "https://images.unsplash.com/photo-1628519592419-bf288f08cef5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxzcG9ydHMlMjBjYXJ8ZW58MHx8fHwxNzU4Nzk2ODg1fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "sports car"
+      "description": "Abstract background with car part schematics",
+      "imageUrl": "https://images.unsplash.com/photo-1690587591273-a9b0bdd5294b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxhdXRvbW90aXZlJTIwYmFja2dyb3VuZHxlbnwwfHx8fDE3NTg4MjUyNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automotive background"
     },
     {
-      "id": "car-1",
-      "description": "Luxury sedan in a city",
-      "imageUrl": "https://images.unsplash.com/photo-1669254383049-eb9462788446?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxsdXh1cnklMjBzZWRhbnxlbnwwfHx8fDE3NTg3Mjk4NzN8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "luxury sedan"
+      "id": "engine-part",
+      "description": "Clean and inspected car engine",
+      "imageUrl": "https://picsum.photos/seed/engine-part/600/400",
+      "imageHint": "car engine"
     },
     {
-      "id": "car-2",
-      "description": "Electric SUV in nature",
-      "imageUrl": "https://images.unsplash.com/photo-1713711975795-164c8ba66068?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxlbGVjdHJpYyUyMHN1dnxlbnwwfHx8fDE3NTg4MjQwODV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "electric suv"
+      "id": "transmission-part",
+      "description": "Car transmission assembly",
+      "imageUrl": "https://images.unsplash.com/photo-1687039618665-9588be0d3fe4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYXIlMjB0cmFuc21pc3Npb258ZW58MHx8fHwxNzU4ODI1MjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car transmission"
     },
     {
-      "id": "car-3",
-      "description": "Classic convertible car",
-      "imageUrl": "https://images.unsplash.com/photo-1621971231299-d2b69f9b3fec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjbGFzc2ljJTIwY2FyfGVufDB8fHx8MTc1ODcyNzgwNHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "classic car"
+      "id": "engine-components",
+      "description": "Various small engine components like gears and pistons",
+      "imageUrl": "https://images.unsplash.com/photo-1609872209699-3e55dc7d90b9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxlbmdpbmUlMjBjb21wb25lbnRzfGVufDB8fHx8MTc1ODgyNTI0Nnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "engine components"
     },
     {
-      "id": "car-4",
-      "description": "Futuristic concept car",
-      "imageUrl": "https://images.unsplash.com/photo-1625870605450-40b1803df06d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjb25jZXB0JTIwY2FyfGVufDB8fHx8MTc1ODcyOTY0MHww&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "concept car"
+      "id": "engine-bay-check",
+      "description": "Mechanic inspecting an engine bay",
+      "imageUrl": "https://images.unsplash.com/photo-1577801345759-f1f412165151?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtZWNoYW5pYyUyMGVuZ2luZXxlbnwwfHx8fDE3NTg4MjUyNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "mechanic engine"
+    },
+    {
+      "id": "automotive-gears",
+      "description": "Close-up of automotive gears",
+      "imageUrl": "https://images.unsplash.com/photo-1665555068086-7d7cac444dcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxhdXRvbW90aXZlJTIwZ2VhcnN8ZW58MHx8fHwxNzU4ODI1MjQ2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "automotive gears"
+    },
+    {
+      "id": "engine-detail",
+      "description": "Detailed shot of a complex engine",
+      "imageUrl": "https://images.unsplash.com/photo-1692364490207-ce72f8204cc2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZW5naW5lJTIwZGV0YWlsfGVufDB8fHx8MTc1ODgyNTI0N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "engine detail"
     },
     {
       "id": "testimonial-avatar-1",
-      "description": "Portrait of a happy customer",
-      "imageUrl": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxwZXJzb24lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3ODg5NzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "person portrait"
+      "description": "Portrait of Sarah Johnson",
+      "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODc1MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-2",
+      "description": "Portrait of Mike Rodriguez",
+      "imageUrl": "https://images.unsplash.com/photo-1636377985931-898218afd306?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-avatar-3",
+      "description": "Portrait of Jennifer Chen",
+      "imageUrl": "https://images.unsplash.com/photo-1557053910-d9eadeed1c58?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODc1MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-4",
+      "description": "Portrait of David Thompson",
+      "imageUrl": "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
+    },
+    {
+      "id": "testimonial-avatar-5",
+      "description": "Portrait of Lisa Martinez",
+      "imageUrl": "https://images.unsplash.com/photo-1557053908-4793c484d06f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHx3b21hbiUyMHBvcnRyYWl0fGVufDB8fHx8MTc1ODc1MTMyM3ww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "woman portrait"
+    },
+    {
+      "id": "testimonial-avatar-6",
+      "description": "Portrait of Robert Kim",
+      "imageUrl": "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "man portrait"
     }
   ]
 }
