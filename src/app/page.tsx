@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle, Star, Settings, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, ArrowUp } from 'lucide-react';
+import { CheckCircle, Star, Settings, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, ArrowUp, CircleCheckBig } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { AnimatedDiv } from '@/components/animated-div';
@@ -15,6 +15,7 @@ import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
 import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { AnimatedCounter } from '@/components/animated-counter';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-car');
 
@@ -158,7 +159,10 @@ const StatsSection = () => (
                     >
                          <div className="flex items-center justify-center space-x-2">
                              <stat.icon className="h-8 w-8 text-foreground" />
-                             <p className="text-4xl font-bold font-headline">{stat.value}</p>
+                             <p className="text-4xl font-bold font-headline">
+                               <AnimatedCounter value={stat.value} />
+                               {stat.suffix}
+                             </p>
                          </div>
                         <p className="mt-2 text-muted-foreground">{stat.label}</p>
                     </AnimatedDiv>

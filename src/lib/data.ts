@@ -1,5 +1,5 @@
 import type { NavItem } from './types';
-import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle } from 'lucide-react';
+import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle, CircleCheckBig } from 'lucide-react';
 
 export const navItems: NavItem[] = [
   { label: 'Why Us', href: '#why-us' },
@@ -35,7 +35,7 @@ export const whyChooseUsFeatures = [
         description: "SSL-encrypted checkout with multiple payment options. Your financial information is always protected.",
     },
     {
-        icon: CheckCircle,
+        icon: CircleCheckBig,
         title: "Perfect Compatibility",
         description: "Search by VIN, make, model, and year for guaranteed fitment. No more guessing or compatibility issues.",
     },
@@ -52,10 +52,10 @@ export const whyChooseUsFeatures = [
 ];
 
 export const stats = [
-    { value: "1M+", label: "Parts Available", icon: Cog },
-    { value: "50K+", label: "Happy Customers", icon: Users },
-    { value: "98%", label: "Satisfaction Rate", icon: Award },
-    { value: "24/7", label: "Expert Support", icon: MessageSquare },
+    { value: 1000000, suffix: "+", label: "Parts Available", icon: Cog },
+    { value: 50000, suffix: "+", label: "Happy Customers", icon: Users },
+    { value: 98, suffix: "%", label: "Satisfaction Rate", icon: Award },
+    { value: 24, suffix: "/7", label: "Expert Support", icon: MessageSquare },
 ];
 
 export const premiumParts = [
