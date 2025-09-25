@@ -44,7 +44,7 @@ const HeroSection = () => {
   if (!heroImage) return null;
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-secondary/30">
+    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-background via-secondary/20 to-secondary/50 dark:from-background dark:via-secondary/10 dark:to-secondary/20">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage.imageUrl}
@@ -66,8 +66,8 @@ const HeroSection = () => {
                     <Image src="https://picsum.photos/seed/gears/32/32" alt="Car Engine" width={32} height={32} className="rounded-full" data-ai-hint="car engine" />
                     <Image src="https://picsum.photos/seed/transmission/32/32" alt="Transmission" width={32} height={32} className="rounded-full" data-ai-hint="transmission gears" />
                 </div>
-                <h1 className="font-headline text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
-                    Get Quality OEM Parts <br /> at <span className="text-yellow-500">50% Less Cost</span>
+                <h1 className="font-headline text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                    Get Quality OEM Parts <br /> at <span className="text-primary">50% Less Cost</span>
                 </h1>
             </AnimatedDiv>
             <AnimatedDiv
@@ -108,7 +108,7 @@ const HeroSection = () => {
 
 
 const WhyChooseUsSection = () => (
-  <section id="why-us" className="py-16 md:py-24 bg-background">
+  <section id="why-us" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
     <div className="container">
       <div className="text-center mb-12">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -129,7 +129,7 @@ const WhyChooseUsSection = () => (
           >
             <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card border">
               <CardHeader>
-                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-secondary text-foreground">
+                <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <feature.icon className="h-6 w-6" />
                 </div>
                 <CardTitle className="font-headline mt-4">{feature.title}</CardTitle>
@@ -146,7 +146,7 @@ const WhyChooseUsSection = () => (
 );
 
 const StatsSection = () => (
-    <section className="py-16 md:py-24 bg-secondary/50">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
         <div className="container">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 {stats.map((stat, index) => (
@@ -158,8 +158,8 @@ const StatsSection = () => (
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
                          <div className="flex items-center justify-center space-x-2">
-                             <stat.icon className="h-8 w-8 text-foreground" />
-                             <p className="text-4xl font-bold font-headline">
+                             <stat.icon className="h-8 w-8 text-primary" />
+                             <p className="text-4xl font-bold font-headline text-primary-foreground">
                                <AnimatedCounter value={stat.value} />
                                {stat.suffix}
                              </p>
@@ -173,7 +173,7 @@ const StatsSection = () => (
 );
 
 const PremiumPartsSection = () => (
-    <section id="parts" className="py-16 md:py-24 bg-background">
+    <section id="parts" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -207,7 +207,7 @@ const PremiumPartsSection = () => (
                                               data-ai-hint={partImage.imageHint}
                                           />
                                         )}
-                                        <Badge variant="secondary" className="absolute top-4 right-4">{part.badge}</Badge>
+                                        <Badge variant="secondary" className="absolute top-4 right-4 bg-primary/20 text-primary-foreground border-primary/30">{part.badge}</Badge>
                                     </div>
                                 </CardHeader>
                                 <CardContent className="p-6">
@@ -216,7 +216,7 @@ const PremiumPartsSection = () => (
                                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                         {part.features.map(feature => (
                                             <li key={feature} className="flex items-center">
-                                                <CheckCircle className="h-4 w-4 mr-2 text-green-500" />
+                                                <CheckCircle className="h-4 w-4 mr-2 text-primary" />
                                                 {feature}
                                             </li>
                                         ))}
@@ -235,7 +235,7 @@ const PremiumPartsSection = () => (
 const QualityProcessSection = () => {
     const qualityImage = PlaceHolderImages.find(p => p.id === 'engine-bay-check');
     return (
-        <section id="process" className="py-16 md:py-24 bg-secondary/50">
+        <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
             <div className="container grid md:grid-cols-2 gap-12 items-center">
                 <AnimatedDiv
                     initial={{ opacity: 0, x: -50 }}
@@ -265,7 +265,7 @@ const QualityProcessSection = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.7 }}
-                    className="relative h-full min-h-[400px] rounded-lg overflow-hidden"
+                    className="relative h-full min-h-[400px] rounded-lg overflow-hidden shadow-2xl"
                 >
                     {qualityImage &&
                       <Image
@@ -286,7 +286,7 @@ const QualityProcessSection = () => {
 const FindPartSection = () => {
     const gearsImage = PlaceHolderImages.find(p => p.id === 'automotive-gears');
     return (
-        <section id="find-part" className="py-16 md:py-24 bg-background">
+        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
             <div className="container max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -297,7 +297,7 @@ const FindPartSection = () => {
                     </p>
                 </div>
                 
-                <Card className="p-6 md:p-8">
+                <Card className="p-6 md:p-8 shadow-xl">
                     <CardContent className="p-0">
                         <Tabs defaultValue="make-model">
                             <TabsList className="grid w-full grid-cols-2 mb-6">
@@ -368,7 +368,7 @@ const FindPartSection = () => {
 };
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="py-16 md:py-24 bg-secondary/50">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
@@ -389,7 +389,7 @@ const TestimonialsSection = () => (
                     >
                         <Card className="h-full flex flex-col">
                             <CardContent className="p-6 flex-grow">
-                                <div className="flex text-yellow-500 mb-2">
+                                <div className="flex text-yellow-400 mb-2">
                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
                                 </div>
                                 <blockquote className="text-foreground">
@@ -415,7 +415,7 @@ const TestimonialsSection = () => (
             <div className="text-center mt-12">
               <div className="inline-flex items-center justify-center rounded-full bg-background p-4 shadow-md">
                 <p className="font-bold text-lg">4.9 / 5</p>
-                <div className="flex text-yellow-500 ml-2">
+                <div className="flex text-yellow-400 ml-2">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
                 </div>
               </div>
@@ -427,7 +427,7 @@ const TestimonialsSection = () => (
 
 
 const TrustSection = () => (
-    <section id="trust" className="py-16 md:py-24 bg-background">
+    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Your Trust is Our Priority</h2>
@@ -440,7 +440,7 @@ const TrustSection = () => (
                 {trustFeatures.map((feature, index) => (
                     <div key={index} className="flex items-start">
                         <div className="flex-shrink-0">
-                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-secondary text-foreground">
+                            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
                                 <feature.icon className="h-6 w-6" />
                             </div>
                         </div>
@@ -461,7 +461,7 @@ const TrustSection = () => (
                         {certifications.map((cert, index) => (
                             <div key={index} className="flex items-center space-x-3">
                                 <div className="p-2 bg-secondary rounded-full">
-                                   <cert.icon className="h-6 w-6 text-foreground" />
+                                   <cert.icon className="h-6 w-6 text-primary" />
                                 </div>
                                 <span className="font-medium">{cert.name}</span>
                             </div>
@@ -473,7 +473,7 @@ const TrustSection = () => (
                     <div className="grid grid-cols-2 gap-4">
                         {securityFeatures.map((feature, index) => (
                             <div key={index} className="flex items-center space-x-3">
-                               <CheckCircle className="h-5 w-5 text-green-500" />
+                               <CheckCircle className="h-5 w-5 text-primary" />
                                 <span className="text-sm text-muted-foreground">{feature}</span>
                             </div>
                         ))}
@@ -488,7 +488,7 @@ const TrustSection = () => (
 const HappyCustomersSection = () => {
     const engineDetailImage = PlaceHolderImages.find(p => p.id === 'engine-detail');
     return (
-        <section className="py-16 md:py-24 bg-secondary/50">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
             <div className="container">
                 <div className="relative rounded-lg overflow-hidden p-8 md:p-12 text-center text-primary-foreground">
                     {engineDetailImage && (
@@ -525,7 +525,7 @@ const HappyCustomersSection = () => {
 
 const GetQuoteSection = () => {
     return (
-        <section id="get-quote" className="py-16 md:py-24 bg-background">
+        <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get Your Quote Today</h2>
