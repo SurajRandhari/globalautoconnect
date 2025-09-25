@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle, Star, Settings, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, ArrowUp, CircleCheckBig, Sun, Disc, Circle, Car, Component, Settings2, Wind } from 'lucide-react';
+import { CheckCircle, Star, ShieldCheck, Truck, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, Phone, Mail, Clock10, ArrowUp, CircleCheckBig, Sun, Disc, Circle, Car, Component, Settings2, Wind } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { AnimatedDiv } from '@/components/animated-div';
@@ -16,11 +16,10 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories, companyLogos } from '@/lib/data';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories, companyLogos } from '@/lib/data';
 import { AnimatedCounter } from '@/components/animated-counter';
 import { useState } from 'react';
-import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
 import { Label } from '@/components/ui/label';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-car');
@@ -115,10 +114,108 @@ const HeroSection = () => {
   );
 }
 
+const FindPartSection = () => {
+    const [open, setOpen] = useState(false);
+    return (
+        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
+            <div className="container max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
+                        Find Your Perfect Part
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
+                        Search our massive inventory for guaranteed compatibility.
+                    </p>
+                </div>
+                
+                <Card className="p-6 md:p-8 shadow-xl bg-card/50 backdrop-blur-sm border-primary/10">
+                    <CardContent className="p-0">
+                        <form onSubmit={(e) => { e.preventDefault(); setOpen(true); }}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div className="space-y-2">
+                                    <Label htmlFor="brand">Select Brand</Label>
+                                    <Select>
+                                        <SelectTrigger id="brand"><SelectValue placeholder="e.g. Kia" /></SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="kia">Kia</SelectItem>
+                                            <SelectItem value="honda">Honda</SelectItem>
+                                            <SelectItem value="bmw">BMW</SelectItem>
+                                            <SelectItem value="ford">Ford</SelectItem>
+                                            <SelectItem value="toyota">Toyota</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="model">Select Model</Label>
+                                    <Select>
+                                        <SelectTrigger id="model"><SelectValue placeholder="e.g. Sorento" /></SelectTrigger>
+                                        <SelectContent>
+                                          <SelectItem value="accord">Accord</SelectItem>
+                                          <SelectItem value="sorento">Sorento</SelectItem>
+                                          <SelectItem value="x5">X5</SelectItem>
+                                          <SelectItem value="f150">F-150</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="year">Select Year</Label>
+                                    <Select>
+                                        <SelectTrigger id="year"><SelectValue placeholder="e.g. 2023" /></SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="2023">2023</SelectItem>
+                                            <SelectItem value="2022">2022</SelectItem>
+                                            <SelectItem value="2021">2021</SelectItem>
+                                            <SelectItem value="2020">2020</SelectItem>
+                                            <SelectItem value="2015">2015</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="part">Select Part</Label>
+                                    <Select>
+                                        <SelectTrigger id="part"><SelectValue placeholder="e.g. Engine" /></SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="engine">Engine</SelectItem>
+                                            <SelectItem value="transmission">Transmission</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                            </div>
+                            <Button type="submit" className="mt-8 w-full" size="lg">
+                                <Search className="mr-2 h-4 w-4" /> Search Available Parts
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
+
+                <AlertDialog open={open} onOpenChange={setOpen}>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Your part is available</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                Your part is available, please contact us to finalize your order.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter className="sm:flex-col sm:space-y-2">
+                            <Button asChild>
+                                <a href="tel:+19794524280">
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Call +1 (979) 452-4280
+                                </a>
+                            </Button>
+                            <Button variant="outline" onClick={() => setOpen(false)}>Continue Searching</Button>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
+            </div>
+        </section>
+    );
+};
+
 const CompanyLogosSection = () => {
     const allLogos = [...companyLogos, ...companyLogos];
     return (
-        <section className="py-12 bg-background">
+        <section className="py-12 bg-gradient-to-b from-primary/5 to-background">
             <div className="container">
                 <h3 className="text-center text-sm font-semibold text-muted-foreground mb-8">TRUSTED BY TOP BRANDS</h3>
                 <div className="relative w-full overflow-hidden">
@@ -324,156 +421,58 @@ const PopularCategoriesSection = () => (
 
 
 const QualityProcessSection = () => {
-    const qualityImage = PlaceHolderImages.find(p => p.id === 'engine-bay-check');
     return (
         <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
-            <div className="container grid md:grid-cols-2 gap-12 items-center">
-                <AnimatedDiv
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
-                >
-                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Quality Process</h2>
-                    <ul className="mt-8 space-y-8">
-                        {qualityProcess.map(step => (
-                            <li key={step.step} className="flex">
-                                <div className="flex-shrink-0">
-                                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-xl">
-                                        {step.step}
-                                    </div>
-                                </div>
-                                <div className="ml-4">
-                                    <h4 className="text-lg font-medium leading-6 text-foreground">{step.title}</h4>
-                                    <p className="mt-1 text-muted-foreground">{step.description}</p>
-                                </div>
-                            </li>
-                        ))}
-                    </ul>
-                </AnimatedDiv>
-                <AnimatedDiv
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.7 }}
-                    className="relative h-full min-h-[400px] rounded-lg overflow-hidden shadow-2xl"
-                >
-                    {qualityImage &&
-                      <Image
-                          src={qualityImage.imageUrl}
-                          alt={qualityImage.description}
-                          fill
-                          className="object-cover"
-                          data-ai-hint={qualityImage.imageHint}
-                      />
-                    }
-                    <div className="absolute inset-0 bg-black/20" />
-                </AnimatedDiv>
-            </div>
-        </section>
-    );
-}
-
-const FindPartSection = () => {
-    const [open, setOpen] = useState(false);
-    return (
-        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
-            <div className="container max-w-4xl mx-auto">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-                        Find Your Perfect Part
-                    </h2>
+            <div className="container">
+                <div className="text-center mb-16">
+                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Our Uncompromising Quality Process</h2>
                     <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
-                        Search our massive inventory for guaranteed compatibility.
+                        We don&apos;t just sell parts; we deliver peace of mind. Our meticulous four-step quality assurance process guarantees excellence.
                     </p>
                 </div>
-                
-                <Card className="p-6 md:p-8 shadow-xl bg-card/50 backdrop-blur-sm border-primary/10">
-                    <CardContent className="p-0">
-                        <form onSubmit={(e) => { e.preventDefault(); setOpen(true); }}>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                                <div className="space-y-2">
-                                    <Label htmlFor="brand">Select Brand</Label>
-                                    <Select>
-                                        <SelectTrigger id="brand"><SelectValue placeholder="e.g. Kia" /></SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="kia">Kia</SelectItem>
-                                            <SelectItem value="honda">Honda</SelectItem>
-                                            <SelectItem value="bmw">BMW</SelectItem>
-                                            <SelectItem value="ford">Ford</SelectItem>
-                                            <SelectItem value="toyota">Toyota</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                <div className="relative">
+                    <div className="absolute left-1/2 top-0 bottom-0 w-px bg-border -translate-x-1/2 hidden md:block" aria-hidden="true" />
+                    {qualityProcess.map((step, index) => (
+                        <AnimatedDiv
+                            key={step.step}
+                            initial={{ opacity: 0, y: 50 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.2 }}
+                            className="relative mb-12 md:mb-20"
+                        >
+                            <div className={`flex flex-col md:flex-row items-center ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                                <div className="md:w-5/12 flex justify-center">
+                                    <Card className="p-6 shadow-lg bg-card/70 backdrop-blur-sm border-primary/10">
+                                        <CardHeader className="p-0 text-center md:text-left">
+                                            <div className="flex items-center gap-4">
+                                                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary text-primary-foreground font-bold text-xl flex-shrink-0">
+                                                    {step.step}
+                                                </div>
+                                                <CardTitle className="font-headline text-xl">{step.title}</CardTitle>
+                                            </div>
+                                        </CardHeader>
+                                        <CardContent className="p-0 pt-4">
+                                            <p className="text-muted-foreground">{step.description}</p>
+                                        </CardContent>
+                                    </Card>
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="model">Select Model</Label>
-                                    <Select>
-                                        <SelectTrigger id="model"><SelectValue placeholder="e.g. Sorento" /></SelectTrigger>
-                                        <SelectContent>
-                                          <SelectItem value="accord">Accord</SelectItem>
-                                          <SelectItem value="sorento">Sorento</SelectItem>
-                                          <SelectItem value="x5">X5</SelectItem>
-                                          <SelectItem value="f150">F-150</SelectItem>
-                                        </SelectContent>
-                                    </Select>
+                                <div className="w-2/12 hidden md:flex justify-center">
+                                    <div className="h-4 w-4 rounded-full bg-primary ring-4 ring-primary/20" />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="year">Select Year</Label>
-                                    <Select>
-                                        <SelectTrigger id="year"><SelectValue placeholder="e.g. 2023" /></SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="2023">2023</SelectItem>
-                                            <SelectItem value="2022">2022</SelectItem>
-                                            <SelectItem value="2021">2021</SelectItem>
-                                            <SelectItem value="2020">2020</SelectItem>
-                                            <SelectItem value="2015">2015</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="part">Select Part</Label>
-                                    <Select>
-                                        <SelectTrigger id="part"><SelectValue placeholder="e.g. Engine" /></SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="engine">Engine</SelectItem>
-                                            <SelectItem value="transmission">Transmission</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                </div>
+                                <div className="md:w-5/12" />
                             </div>
-                            <Button type="submit" className="mt-8 w-full" size="lg">
-                                <Search className="mr-2 h-4 w-4" /> Search Available Parts
-                            </Button>
-                        </form>
-                    </CardContent>
-                </Card>
-
-                <AlertDialog open={open} onOpenChange={setOpen}>
-                    <AlertDialogContent>
-                        <AlertDialogHeader>
-                            <AlertDialogTitle>Your part is available</AlertDialogTitle>
-                            <AlertDialogDescription>
-                                Your part is available, please contact us to finalize your order.
-                            </AlertDialogDescription>
-                        </AlertDialogHeader>
-                        <AlertDialogFooter className="sm:flex-col sm:space-y-2">
-                            <Button asChild>
-                                <a href="tel:+19794524280">
-                                    <Phone className="mr-2 h-5 w-5" />
-                                    Call +1 (979) 452-4280
-                                </a>
-                            </Button>
-                            <Button variant="outline" onClick={() => setOpen(false)}>Continue Searching</Button>
-                        </AlertDialogFooter>
-                    </AlertDialogContent>
-                </AlertDialog>
+                        </AnimatedDiv>
+                    ))}
+                </div>
             </div>
         </section>
     );
 };
 
+
 const TestimonialsSection = () => (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
@@ -532,7 +531,7 @@ const TestimonialsSection = () => (
 
 
 const TrustSection = () => (
-    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
+    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Your Trust is Our Priority</h2>
@@ -593,7 +592,7 @@ const TrustSection = () => (
 const HappyCustomersSection = () => {
     const engineDetailImage = PlaceHolderImages.find(p => p.id === 'engine-detail');
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
             <div className="container">
                 <div className="relative rounded-lg overflow-hidden p-8 md:p-12 text-center text-primary-foreground">
                     {engineDetailImage && (
@@ -690,7 +689,7 @@ const GetQuoteSection = () => {
 
 const CallToActionSection = () => {
     return (
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-background">
             <div className="container">
                 <AnimatedDiv
                     initial={{ opacity: 0, y: 50 }}
@@ -717,3 +716,5 @@ const CallToActionSection = () => {
         </section>
     );
 };
+
+    
