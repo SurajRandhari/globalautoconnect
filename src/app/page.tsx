@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav } from '@/lib/data';
+import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnimatedCounter } from '@/components/animated-counter';
 
@@ -29,6 +29,7 @@ export default function Home() {
         <WhyChooseUsSection />
         <StatsSection />
         <PremiumPartsSection />
+        <PopularCategoriesSection />
         <QualityProcessSection />
         <FindPartSection />
         <TestimonialsSection />
@@ -198,7 +199,7 @@ const PremiumPartsSection = () => (
                         >
                             <Card className="overflow-hidden h-full group bg-card/50 backdrop-blur-sm border-primary/10">
                                 <CardHeader className="p-0">
-                                    <div className="relative aspect-video w-full">
+                                    <div className="relative aspect-video w-full overflow-hidden">
                                         {partImage && (
                                           <Image
                                               src={partImage.imageUrl}
@@ -234,10 +235,59 @@ const PremiumPartsSection = () => (
 );
 
 
+const PopularCategoriesSection = () => (
+    <section id="categories" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
+        <div className="container">
+            <div className="text-center mb-12">
+                <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Popular Categories</h2>
+                <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
+                    Browse our wide selection of OEM parts across all major categories.
+                </p>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+                {popularCategories.map((category, index) => {
+                    const catImage = PlaceHolderImages.find(p => p.id === category.imageId);
+                    return (
+                        <AnimatedDiv
+                            key={category.name}
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.5, delay: index * 0.05 }}
+                        >
+                            <Link href="#find-part">
+                                <Card className="relative overflow-hidden group h-48 md:h-64 flex items-end justify-start p-4 text-white">
+                                    {catImage && (
+                                        <Image
+                                            src={catImage.imageUrl}
+                                            alt={category.name}
+                                            fill
+                                            className="object-cover transition-all duration-500 ease-in-out group-hover:scale-110"
+                                            sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+                                            data-ai-hint={catImage.imageHint}
+                                        />
+                                    )}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
+                                    <div className="relative z-10 transition-transform duration-300 group-hover:-translate-y-1">
+                                        <category.icon className="h-8 w-8 mb-2 text-primary drop-shadow-lg" />
+                                        <h3 className="font-headline text-lg font-bold">{category.name}</h3>
+                                        <p className="text-sm text-primary-foreground/80">{category.count}</p>
+                                    </div>
+                                </Card>
+                            </Link>
+                        </AnimatedDiv>
+                    );
+                })}
+            </div>
+        </div>
+    </section>
+);
+
+
 const QualityProcessSection = () => {
     const qualityImage = PlaceHolderImages.find(p => p.id === 'engine-bay-check');
     return (
-        <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
+        <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
             <div className="container grid md:grid-cols-2 gap-12 items-center">
                 <AnimatedDiv
                     initial={{ opacity: 0, x: -50 }}
@@ -288,7 +338,7 @@ const QualityProcessSection = () => {
 const FindPartSection = () => {
     const gearsImage = PlaceHolderImages.find(p => p.id === 'automotive-gears');
     return (
-        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
+        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
             <div className="container max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -370,7 +420,7 @@ const FindPartSection = () => {
 };
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
@@ -429,7 +479,7 @@ const TestimonialsSection = () => (
 
 
 const TrustSection = () => (
-    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
+    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Your Trust is Our Priority</h2>
@@ -490,7 +540,7 @@ const TrustSection = () => (
 const HappyCustomersSection = () => {
     const engineDetailImage = PlaceHolderImages.find(p => p.id === 'engine-detail');
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
             <div className="container">
                 <div className="relative rounded-lg overflow-hidden p-8 md:p-12 text-center text-primary-foreground">
                     {engineDetailImage && (
@@ -528,7 +578,7 @@ const HappyCustomersSection = () => {
 const GetQuoteSection = () => {
     const contactImage = PlaceHolderImages.find(p => p.id === 'contact-us');
     return (
-      <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
+      <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get Your Quote Today</h2>
@@ -614,5 +664,3 @@ const CallToActionSection = () => {
         </section>
     );
 };
-
-    

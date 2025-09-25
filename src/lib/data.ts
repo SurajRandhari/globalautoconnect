@@ -1,9 +1,10 @@
 import type { NavItem } from './types';
-import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle, CircleCheckBig } from 'lucide-react';
+import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle, CircleCheckBig, Car, Component, Settings2, Wind } from 'lucide-react';
 
 export const navItems: NavItem[] = [
   { label: 'Why Us', href: '#why-us' },
   { label: 'Parts', href: '#parts' },
+  { label: 'Categories', href: '#categories' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#get-quote' },
 ];
@@ -200,4 +201,18 @@ export const footerNav = [
             { label: "✓ Expert Support", href: "#why-us" }
         ]
     }
-]
+];
+
+export const popularCategories = [
+    { name: "Body Parts", count: "3,200+ parts", imageId: "body-parts", icon: Car },
+    { name: "Engine Parts", count: "1,500+ parts", imageId: "engine-parts", icon: Cog },
+    { name: "Suspension", count: "2,800+ parts", imageId: "suspension-parts", icon: Settings2 },
+    { name: "Transmission", count: "1,200+ parts", imageId: "transmission-parts-cat", icon: Component },
+    { name: "Lighting", count: "4,500+ parts", imageId: "lighting-parts", icon: Sun },
+    { name: "Brakes", count: "2,100+ parts", imageId: "brake-parts", icon: Disc },
+    { name: "Exhaust", count: "800+ parts", imageId: "exhaust-parts", icon: Wind },
+    { name: "Wheels & Tires", count: "3,500+ parts", imageId: "wheel-parts", icon: Circle },
+];
+
+// Add Sun, Disc, Circle to lucide-react import
+import { Sun, Disc, Circle } from 'lucide-react';

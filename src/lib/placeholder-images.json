@@ -83,6 +83,54 @@
       "description": "Customer service representative helping a client",
       "imageUrl": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2V8ZW58MHx8fHwxNzU4ODg0MzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "customer service"
+    },
+    {
+      "id": "body-parts",
+      "description": "Car doors and fenders",
+      "imageUrl": "https://images.unsplash.com/photo-1544439199-1e0eebe49a6e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHxjYXIlMjBib2R5fGVufDB8fHx8MTc1ODcyMjIwMXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car body"
+    },
+    {
+      "id": "engine-parts",
+      "description": "Close up of an engine",
+      "imageUrl": "https://images.unsplash.com/photo-1505635374747-431af16edaf2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXIlMjBlbmdpbmV8ZW58MHx8fHwxNzU4ODI1MjU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car engine"
+    },
+    {
+      "id": "suspension-parts",
+      "description": "Car suspension and shock absorber",
+      "imageUrl": "https://images.unsplash.com/photo-1729545321223-e597f91a25d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjYXIlMjBzdXNwZW5zaW9ufGVufDB8fHx8MTc1ODgzMTUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car suspension"
+    },
+    {
+      "id": "transmission-parts-cat",
+      "description": "Close up of transmission gears",
+      "imageUrl": "https://images.unsplash.com/photo-1570224282208-8319d7252a99?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0cmFuc21pc3Npb24lMjBnZWFyc3xlbnwwfHx8fDE3NTg4MzE1MDZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "transmission gears"
+    },
+    {
+      "id": "lighting-parts",
+      "description": "Car headlights",
+      "imageUrl": "https://images.unsplash.com/photo-1713299612741-a7ce9115dfac?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjYXIlMjBoZWFkbGlnaHRzfGVufDB8fHx8MTc1ODgzMTUwNXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car headlights"
+    },
+    {
+      "id": "brake-parts",
+      "description": "Car brake disc and caliper",
+      "imageUrl": "https://images.unsplash.com/photo-1613214150384-14921ff659b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxjYXIlMjBicmFrZXN8ZW58MHx8fHwxNzU4ODMxNTA1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car brakes"
+    },
+    {
+      "id": "exhaust-parts",
+      "description": "Car exhaust pipe",
+      "imageUrl": "https://images.unsplash.com/photo-1708389733862-e88af7b08a7c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxjYXIlMjBleGhhdXN0fGVufDB8fHx8MTc1ODczMTk0Mnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "car exhaust"
+    },
+    {
+      "id": "wheel-parts",
+      "description": "Alloy wheels and tires",
+      "imageUrl": "https://images.unsplash.com/photo-1576572587475-6f7c0b6e49a7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxhbGxveSUyMHdoZWVsfGVufDB8fHx8MTc1ODc5NzA3NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "alloy wheel"
     }
   ]
 }
