@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { CheckCircle, Star, Settings, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, ArrowUp, CircleCheckBig } from 'lucide-react';
+import { CheckCircle, Star, Settings, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, ArrowUp, CircleCheckBig, Sun, Disc, Circle, Car, Component, Settings2, Wind } from 'lucide-react';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { AnimatedDiv } from '@/components/animated-div';
@@ -14,9 +14,16 @@ import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
-import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories } from '@/lib/data';
+import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories, companyLogos } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnimatedCounter } from '@/components/animated-counter';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-car');
 
@@ -26,6 +33,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <CompanyLogosSection />
         <WhyChooseUsSection />
         <StatsSection />
         <PremiumPartsSection />
@@ -108,6 +116,43 @@ const HeroSection = () => {
     </section>
   );
 }
+
+const CompanyLogosSection = () => (
+    <section className="py-12 bg-background">
+        <div className="container">
+            <h3 className="text-center text-sm font-semibold text-muted-foreground mb-6">TRUSTED BY TOP BRANDS</h3>
+            <Carousel
+                opts={{
+                    align: "start",
+                    loop: true,
+                }}
+                className="w-full"
+            >
+                <CarouselContent className="-ml-4">
+                    {companyLogos.map((logo, index) => {
+                        const logoImage = PlaceHolderImages.find(p => p.id === logo.imageId);
+                        return (
+                            <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6">
+                                <div className="p-1">
+                                    {logoImage && (
+                                        <Image
+                                            src={logoImage.imageUrl}
+                                            alt={logo.name}
+                                            width={158}
+                                            height={48}
+                                            className="grayscale hover:grayscale-0 transition-all"
+                                            data-ai-hint={logoImage.imageHint}
+                                        />
+                                    )}
+                                </div>
+                            </CarouselItem>
+                        );
+                    })}
+                </CarouselContent>
+            </Carousel>
+        </div>
+    </section>
+);
 
 
 const WhyChooseUsSection = () => (

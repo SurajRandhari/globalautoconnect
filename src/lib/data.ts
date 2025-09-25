@@ -1,5 +1,5 @@
 import type { NavItem } from './types';
-import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle, CircleCheckBig, Car, Component, Settings2, Wind } from 'lucide-react';
+import { Cog, ShieldCheck, Truck, Clock, CreditCard, Search, Wrench, Users, Award, Tag, ShoppingCart, MessageSquare, Phone, Mail, Clock10, CheckCircle, CircleCheckBig, Car, Component, Settings2, Wind, Sun, Disc, Circle } from 'lucide-react';
 
 export const navItems: NavItem[] = [
   { label: 'Why Us', href: '#why-us' },
@@ -7,6 +7,15 @@ export const navItems: NavItem[] = [
   { label: 'Categories', href: '#categories' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#get-quote' },
+];
+
+export const companyLogos = [
+    { name: "Bosch", imageId: "bosch-logo" },
+    { name: "Denso", imageId: "denso-logo" },
+    { name: "Magna", imageId: "magna-logo" },
+    { name: "ZF", imageId: "zf-logo" },
+    { name: "Aisin", imageId: "aisin-logo" },
+    { name: "Valeo", imageId: "valeo-logo" },
 ];
 
 export const whyChooseUsFeatures = [
@@ -213,6 +222,3 @@ export const popularCategories = [
     { name: "Exhaust", count: "800+ parts", imageId: "exhaust-parts", icon: Wind },
     { name: "Wheels & Tires", count: "3,500+ parts", imageId: "wheel-parts", icon: Circle },
 ];
-
-// Add Sun, Disc, Circle to lucide-react import
-import { Sun, Disc, Circle } from 'lucide-react';
