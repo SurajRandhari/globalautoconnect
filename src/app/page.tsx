@@ -35,6 +35,7 @@ export default function Home() {
         <TrustSection />
         <HappyCustomersSection/>
         <GetQuoteSection />
+        <CallToActionSection />
       </main>
       <Footer />
     </div>
@@ -583,3 +584,35 @@ const GetQuoteSection = () => {
       </section>
     );
 }
+
+const CallToActionSection = () => {
+    return (
+        <section className="py-16 md:py-24">
+            <div className="container">
+                <AnimatedDiv
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                >
+                    <Card className="bg-primary text-primary-foreground shadow-2xl">
+                        <CardContent className="p-10 text-center flex flex-col items-center">
+                            <h2 className="font-headline text-3xl font-bold">Need Parts Right Now?</h2>
+                            <p className="mt-2 max-w-2xl mx-auto">
+                                Call our experts for immediate assistance and same-day quotes.
+                            </p>
+                            <Button asChild size="lg" variant="secondary" className="mt-6 bg-primary-foreground text-primary hover:bg-primary-foreground/90">
+                                <a href="tel:+19794524280">
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Call +1 (979) 452-4280
+                                </a>
+                            </Button>
+                        </CardContent>
+                    </Card>
+                </AnimatedDiv>
+            </div>
+        </section>
+    );
+};
+
+    
