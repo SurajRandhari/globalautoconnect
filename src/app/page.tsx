@@ -31,13 +31,13 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
+        <FindPartSection />
         <CompanyLogosSection />
         <WhyChooseUsSection />
         <StatsSection />
         <PremiumPartsSection />
         <PopularCategoriesSection />
         <QualityProcessSection />
-        <FindPartSection />
         <TestimonialsSection />
         <TrustSection />
         <HappyCustomersSection/>
@@ -453,12 +453,17 @@ const FindPartSection = () => {
                         <AlertDialogHeader>
                             <AlertDialogTitle>Your part is available</AlertDialogTitle>
                             <AlertDialogDescription>
-                                We have found the part you are looking for. Proceed to checkout or contact us for more information.
+                                Your part is available, please contact us to finalize your order.
                             </AlertDialogDescription>
                         </AlertDialogHeader>
-                        <AlertDialogFooter>
+                        <AlertDialogFooter className="sm:flex-col sm:space-y-2">
+                            <Button asChild>
+                                <a href="tel:+19794524280">
+                                    <Phone className="mr-2 h-5 w-5" />
+                                    Call +1 (979) 452-4280
+                                </a>
+                            </Button>
                             <Button variant="outline" onClick={() => setOpen(false)}>Continue Searching</Button>
-                            <Button>Proceed to Checkout</Button>
                         </AlertDialogFooter>
                     </AlertDialogContent>
                 </AlertDialog>
