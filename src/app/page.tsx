@@ -17,13 +17,6 @@ import { Badge } from '@/components/ui/badge';
 import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories, companyLogos } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnimatedCounter } from '@/components/animated-counter';
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel"
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-car');
 
@@ -117,43 +110,39 @@ const HeroSection = () => {
   );
 }
 
-const CompanyLogosSection = () => (
-    <section className="py-12 bg-background">
-        <div className="container">
-            <h3 className="text-center text-sm font-semibold text-muted-foreground mb-6">TRUSTED BY TOP BRANDS</h3>
-            <Carousel
-                opts={{
-                    align: "start",
-                    loop: true,
-                }}
-                className="w-full"
-            >
-                <CarouselContent className="-ml-4">
-                    {companyLogos.map((logo, index) => {
-                        const logoImage = PlaceHolderImages.find(p => p.id === logo.imageId);
-                        return (
-                            <CarouselItem key={index} className="pl-4 basis-1/2 md:basis-1/3 lg:basis-1/6">
-                                <div className="p-1">
+const CompanyLogosSection = () => {
+    const allLogos = [...companyLogos, ...companyLogos];
+    return (
+        <section className="py-12 bg-background">
+            <div className="container">
+                <h3 className="text-center text-sm font-semibold text-muted-foreground mb-8">TRUSTED BY TOP BRANDS</h3>
+                <div className="relative w-full overflow-hidden">
+                    <div className="flex marquee">
+                        {allLogos.map((logo, index) => {
+                            const logoImage = PlaceHolderImages.find(p => p.id === logo.imageId);
+                            return (
+                                <div key={index} className="flex-shrink-0 mx-6" style={{ width: '160px' }}>
                                     {logoImage && (
                                         <Image
                                             src={logoImage.imageUrl}
                                             alt={logo.name}
                                             width={158}
                                             height={48}
-                                            className="grayscale hover:grayscale-0 transition-all"
+                                            className="h-12 w-auto object-contain grayscale hover:grayscale-0 transition-all"
                                             data-ai-hint={logoImage.imageHint}
                                         />
                                     )}
                                 </div>
-                            </CarouselItem>
-                        );
-                    })}
-                </CarouselContent>
-            </Carousel>
-        </div>
-    </section>
-);
-
+                            );
+                        })}
+                    </div>
+                    <div className="absolute inset-y-0 left-0 w-1/12 bg-gradient-to-r from-background to-transparent" />
+                    <div className="absolute inset-y-0 right-0 w-1/12 bg-gradient-to-l from-background to-transparent" />
+                </div>
+            </div>
+        </section>
+    );
+};
 
 const WhyChooseUsSection = () => (
   <section id="why-us" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
