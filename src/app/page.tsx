@@ -45,7 +45,7 @@ const HeroSection = () => {
   if (!heroImage) return null;
 
   return (
-    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-background via-secondary/20 to-secondary/50 dark:from-background dark:via-secondary/10 dark:to-secondary/20">
+    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-background via-primary/5 to-primary/20">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage.imageUrl}
@@ -109,7 +109,7 @@ const HeroSection = () => {
 
 
 const WhyChooseUsSection = () => (
-  <section id="why-us" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+  <section id="why-us" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
     <div className="container">
       <div className="text-center mb-12">
         <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -128,7 +128,7 @@ const WhyChooseUsSection = () => (
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card border">
+            <Card className="h-full text-center transition-all hover:shadow-lg hover:-translate-y-1 bg-card/50 backdrop-blur-sm border-primary/10">
               <CardHeader>
                 <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary">
                   <feature.icon className="h-6 w-6" />
@@ -147,7 +147,7 @@ const WhyChooseUsSection = () => (
 );
 
 const StatsSection = () => (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
         <div className="container">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
                 {stats.map((stat, index) => (
@@ -174,7 +174,7 @@ const StatsSection = () => (
 );
 
 const PremiumPartsSection = () => (
-    <section id="parts" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+    <section id="parts" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -195,7 +195,7 @@ const PremiumPartsSection = () => (
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                         >
-                            <Card className="overflow-hidden h-full group">
+                            <Card className="overflow-hidden h-full group bg-card/50 backdrop-blur-sm border-primary/10">
                                 <CardHeader className="p-0">
                                     <div className="relative aspect-video w-full">
                                         {partImage && (
@@ -208,12 +208,12 @@ const PremiumPartsSection = () => (
                                               data-ai-hint={partImage.imageHint}
                                           />
                                         )}
-                                        <Badge variant="secondary" className="absolute top-4 right-4 bg-primary/20 text-primary-foreground border-primary/30">{part.badge}</Badge>
+                                        <Badge variant="secondary" className="absolute top-4 right-4 bg-primary text-primary-foreground">{part.badge}</Badge>
                                     </div>
                                 </CardHeader>
                                 <CardContent className="p-6">
                                     <CardTitle className="font-headline text-xl">{part.title}</CardTitle>
-                                    <CardDescription className="mt-2 text-foreground">{part.description}</CardDescription>
+                                    <CardDescription className="mt-2 text-muted-foreground">{part.description}</CardDescription>
                                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                         {part.features.map(feature => (
                                             <li key={feature} className="flex items-center">
@@ -236,7 +236,7 @@ const PremiumPartsSection = () => (
 const QualityProcessSection = () => {
     const qualityImage = PlaceHolderImages.find(p => p.id === 'engine-bay-check');
     return (
-        <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
+        <section id="process" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
             <div className="container grid md:grid-cols-2 gap-12 items-center">
                 <AnimatedDiv
                     initial={{ opacity: 0, x: -50 }}
@@ -287,7 +287,7 @@ const QualityProcessSection = () => {
 const FindPartSection = () => {
     const gearsImage = PlaceHolderImages.find(p => p.id === 'automotive-gears');
     return (
-        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+        <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
             <div className="container max-w-4xl mx-auto">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
@@ -298,7 +298,7 @@ const FindPartSection = () => {
                     </p>
                 </div>
                 
-                <Card className="p-6 md:p-8 shadow-xl">
+                <Card className="p-6 md:p-8 shadow-xl bg-card/50 backdrop-blur-sm border-primary/10">
                     <CardContent className="p-0">
                         <Tabs defaultValue="make-model">
                             <TabsList className="grid w-full grid-cols-2 mb-6">
@@ -369,7 +369,7 @@ const FindPartSection = () => {
 };
 
 const TestimonialsSection = () => (
-    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
+    <section id="testimonials" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">What Our Customers Say</h2>
@@ -388,7 +388,7 @@ const TestimonialsSection = () => (
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                     >
-                        <Card className="h-full flex flex-col">
+                        <Card className="h-full flex flex-col bg-card/50 backdrop-blur-sm border-primary/10">
                             <CardContent className="p-6 flex-grow">
                                 <div className="flex text-primary mb-2">
                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
@@ -414,7 +414,7 @@ const TestimonialsSection = () => (
                 )})}
             </div>
             <div className="text-center mt-12">
-              <div className="inline-flex items-center justify-center rounded-full bg-background p-4 shadow-md">
+              <div className="inline-flex items-center justify-center rounded-full bg-background/50 backdrop-blur-sm p-4 shadow-md border-primary/10 border">
                 <p className="font-bold text-lg">4.9 / 5</p>
                 <div className="flex text-primary ml-2">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
@@ -428,7 +428,7 @@ const TestimonialsSection = () => (
 
 
 const TrustSection = () => (
-    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+    <section id="trust" className="py-16 md:py-24 bg-gradient-to-b from-background to-primary/5">
         <div className="container">
             <div className="text-center mb-12">
                 <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Your Trust is Our Priority</h2>
@@ -453,7 +453,7 @@ const TrustSection = () => (
                 ))}
             </div>
             
-            <Separator className="my-12" />
+            <Separator className="my-12 bg-primary/10" />
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
@@ -489,7 +489,7 @@ const TrustSection = () => (
 const HappyCustomersSection = () => {
     const engineDetailImage = PlaceHolderImages.find(p => p.id === 'engine-detail');
     return (
-        <section className="py-16 md:py-24 bg-gradient-to-b from-secondary/20 to-background">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-primary/5 to-primary/10">
             <div className="container">
                 <div className="relative rounded-lg overflow-hidden p-8 md:p-12 text-center text-primary-foreground">
                     {engineDetailImage && (
@@ -527,7 +527,7 @@ const HappyCustomersSection = () => {
 const GetQuoteSection = () => {
     const contactImage = PlaceHolderImages.find(p => p.id === 'contact-us');
     return (
-      <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+      <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get Your Quote Today</h2>
@@ -535,7 +535,7 @@ const GetQuoteSection = () => {
               Ready to save big on quality OEM parts? Contact our experts for a personalized quote and let us help you find exactly what you need.
             </p>
           </div>
-          <Card className="overflow-hidden lg:grid lg:grid-cols-2 lg:gap-0 shadow-xl">
+          <Card className="overflow-hidden lg:grid lg:grid-cols-2 lg:gap-0 shadow-xl bg-card/50 backdrop-blur-sm border-primary/10">
             <CardContent className="p-6 md:p-10 flex flex-col justify-center">
               <h3 className="font-headline text-2xl font-bold mb-2">Request a Quote</h3>
               <p className="text-muted-foreground mb-6">We typically respond within 2 business hours.</p>
@@ -583,5 +583,3 @@ const GetQuoteSection = () => {
       </section>
     );
 }
-
-    
