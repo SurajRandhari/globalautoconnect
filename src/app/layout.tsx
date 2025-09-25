@@ -21,16 +21,26 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={cn('font-body antialiased min-h-screen bg-background')}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Toaster />
-        </ThemeProvider>
+      <body className={cn('font-body antialiased')}>
+        <div className="min-h-screen w-full relative">
+            <div
+                className="absolute inset-0 z-0"
+                style={{
+                background: "radial-gradient(125% 125% at 50% 10%, hsl(var(--background)) 40%, hsl(var(--primary) / 0.2) 100%)",
+                }}
+            />
+            <div className="relative z-10">
+                <ThemeProvider
+                attribute="class"
+                defaultTheme="system"
+                enableSystem
+                disableTransitionOnChange
+                >
+                {children}
+                <Toaster />
+                </ThemeProvider>
+            </div>
+        </div>
       </body>
     </html>
   );
