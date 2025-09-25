@@ -1,4 +1,6 @@
 
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -17,6 +19,9 @@ import { Badge } from '@/components/ui/badge';
 import { whyChooseUsFeatures, stats, premiumParts, qualityProcess, popularParts, testimonials, trustFeatures, certifications, securityFeatures, footerNav, popularCategories, companyLogos } from '@/lib/data';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { AnimatedCounter } from '@/components/animated-counter';
+import { useState } from 'react';
+import { AlertDialog, AlertDialogAction, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from '@/components/ui/alert-dialog';
+import { Label } from '@/components/ui/label';
 
 const heroImage = PlaceHolderImages.find(p => p.id === 'hero-car');
 
@@ -370,7 +375,7 @@ const QualityProcessSection = () => {
 }
 
 const FindPartSection = () => {
-    const gearsImage = PlaceHolderImages.find(p => p.id === 'automotive-gears');
+    const [open, setOpen] = useState(false);
     return (
         <section id="find-part" className="py-16 md:py-24 bg-gradient-to-b from-primary/10 to-background">
             <div className="container max-w-4xl mx-auto">
@@ -379,21 +384,43 @@ const FindPartSection = () => {
                         Find Your Perfect Part
                     </h2>
                     <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
-                        Search our massive inventory using your VIN number or vehicle details for guaranteed compatibility.
+                        Search our massive inventory for guaranteed compatibility.
                     </p>
                 </div>
                 
                 <Card className="p-6 md:p-8 shadow-xl bg-card/50 backdrop-blur-sm border-primary/10">
                     <CardContent className="p-0">
-                        <Tabs defaultValue="make-model">
-                            <TabsList className="grid w-full grid-cols-2 mb-6">
-                                <TabsTrigger value="make-model">Search by Make &amp; Model</TabsTrigger>
-                                <TabsTrigger value="vin">Search by VIN</TabsTrigger>
-                            </TabsList>
-                            <TabsContent value="make-model">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                        <form onSubmit={(e) => { e.preventDefault(); setOpen(true); }}>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                                <div className="space-y-2">
+                                    <Label htmlFor="brand">Select Brand</Label>
                                     <Select>
-                                        <SelectTrigger><SelectValue placeholder="Year" /></SelectTrigger>
+                                        <SelectTrigger id="brand"><SelectValue placeholder="e.g. Kia" /></SelectTrigger>
+                                        <SelectContent>
+                                            <SelectItem value="kia">Kia</SelectItem>
+                                            <SelectItem value="honda">Honda</SelectItem>
+                                            <SelectItem value="bmw">BMW</SelectItem>
+                                            <SelectItem value="ford">Ford</SelectItem>
+                                            <SelectItem value="toyota">Toyota</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="model">Select Model</Label>
+                                    <Select>
+                                        <SelectTrigger id="model"><SelectValue placeholder="e.g. Sorento" /></SelectTrigger>
+                                        <SelectContent>
+                                          <SelectItem value="accord">Accord</SelectItem>
+                                          <SelectItem value="sorento">Sorento</SelectItem>
+                                          <SelectItem value="x5">X5</SelectItem>
+                                          <SelectItem value="f150">F-150</SelectItem>
+                                        </SelectContent>
+                                    </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="year">Select Year</Label>
+                                    <Select>
+                                        <SelectTrigger id="year"><SelectValue placeholder="e.g. 2023" /></SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value="2023">2023</SelectItem>
                                             <SelectItem value="2022">2022</SelectItem>
@@ -402,52 +429,39 @@ const FindPartSection = () => {
                                             <SelectItem value="2015">2015</SelectItem>
                                         </SelectContent>
                                     </Select>
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="part">Select Part</Label>
                                     <Select>
-                                        <SelectTrigger><SelectValue placeholder="Make" /></SelectTrigger>
-                                        <SelectContent>
-                                            <SelectItem value="kia">Kia</SelectItem>
-                                            <SelectItem value="honda">Honda</SelectItem>
-                                            <SelectItem value="bmw">BMW</SelectItem>
-                                            <SelectItem value="ford">Ford</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <Select>
-                                        <SelectTrigger><SelectValue placeholder="Model" /></SelectTrigger>
-                                        <SelectContent>
-                                          <SelectItem value="accord">Accord</SelectItem>
-                                          <SelectItem value="sorento">Sorento</SelectItem>
-                                          <SelectItem value="x5">X5</SelectItem>
-                                          <SelectItem value="f150">F-150</SelectItem>
-                                        </SelectContent>
-                                    </Select>
-                                    <Select>
-                                        <SelectTrigger><SelectValue placeholder="Part" /></SelectTrigger>
+                                        <SelectTrigger id="part"><SelectValue placeholder="e.g. Engine" /></SelectTrigger>
                                         <SelectContent>
                                             <SelectItem value="engine">Engine</SelectItem>
                                             <SelectItem value="transmission">Transmission</SelectItem>
                                         </SelectContent>
                                     </Select>
                                 </div>
-                            </TabsContent>
-                            <TabsContent value="vin">
-                                <Input placeholder="Enter your 17-digit VIN" />
-                            </TabsContent>
-                        </Tabs>
-
-                        <Button className="mt-6 w-full" size="lg">
-                            <Search className="mr-2 h-4 w-4" /> Search Available Parts
-                        </Button>
-
-                        <div className="mt-8">
-                            <h4 className="font-semibold text-center mb-4">Popular Parts</h4>
-                            <div className="flex flex-wrap justify-center gap-2">
-                                {popularParts.map(part => (
-                                    <Badge key={part} variant="secondary" className="cursor-pointer hover:bg-muted">{part}</Badge>
-                                ))}
                             </div>
-                        </div>
+                            <Button type="submit" className="mt-8 w-full" size="lg">
+                                <Search className="mr-2 h-4 w-4" /> Search Available Parts
+                            </Button>
+                        </form>
                     </CardContent>
                 </Card>
+
+                <AlertDialog open={open} onOpenChange={setOpen}>
+                    <AlertDialogContent>
+                        <AlertDialogHeader>
+                            <AlertDialogTitle>Your part is available</AlertDialogTitle>
+                            <AlertDialogDescription>
+                                We have found the part you are looking for. Proceed to checkout or contact us for more information.
+                            </AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                            <Button variant="outline" onClick={() => setOpen(false)}>Continue Searching</Button>
+                            <Button>Proceed to Checkout</Button>
+                        </AlertDialogFooter>
+                    </AlertDialogContent>
+                </AlertDialog>
             </div>
         </section>
     );
