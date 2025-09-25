@@ -66,7 +66,7 @@ const HeroSection = () => {
                     <Image src="https://picsum.photos/seed/gears/32/32" alt="Car Engine" width={32} height={32} className="rounded-full" data-ai-hint="car engine" />
                     <Image src="https://picsum.photos/seed/transmission/32/32" alt="Transmission" width={32} height={32} className="rounded-full" data-ai-hint="transmission gears" />
                 </div>
-                <h1 className="font-headline text-4xl font-bold tracking-tight text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
                     Get Quality OEM Parts <br /> at <span className="text-primary">50% Less Cost</span>
                 </h1>
             </AnimatedDiv>
@@ -159,7 +159,7 @@ const StatsSection = () => (
                     >
                          <div className="flex items-center justify-center space-x-2">
                              <stat.icon className="h-8 w-8 text-primary" />
-                             <p className="text-4xl font-bold font-headline text-primary-foreground">
+                             <p className="text-4xl font-bold font-headline text-foreground">
                                <AnimatedCounter value={stat.value} />
                                {stat.suffix}
                              </p>
@@ -301,7 +301,7 @@ const FindPartSection = () => {
                     <CardContent className="p-0">
                         <Tabs defaultValue="make-model">
                             <TabsList className="grid w-full grid-cols-2 mb-6">
-                                <TabsTrigger value="make-model">Search by Make & Model</TabsTrigger>
+                                <TabsTrigger value="make-model">Search by Make &amp; Model</TabsTrigger>
                                 <TabsTrigger value="vin">Search by VIN</TabsTrigger>
                             </TabsList>
                             <TabsContent value="make-model">
@@ -389,7 +389,7 @@ const TestimonialsSection = () => (
                     >
                         <Card className="h-full flex flex-col">
                             <CardContent className="p-6 flex-grow">
-                                <div className="flex text-yellow-400 mb-2">
+                                <div className="flex text-primary mb-2">
                                     {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
                                 </div>
                                 <blockquote className="text-foreground">
@@ -415,7 +415,7 @@ const TestimonialsSection = () => (
             <div className="text-center mt-12">
               <div className="inline-flex items-center justify-center rounded-full bg-background p-4 shadow-md">
                 <p className="font-bold text-lg">4.9 / 5</p>
-                <div className="flex text-yellow-400 ml-2">
+                <div className="flex text-primary ml-2">
                   {[...Array(5)].map((_, i) => <Star key={i} className="h-5 w-5 fill-current" />)}
                 </div>
               </div>
@@ -469,7 +469,7 @@ const TrustSection = () => (
                     </div>
                 </div>
                  <div>
-                    <h3 className="font-semibold text-xl mb-4">Security & Trust</h3>
+                    <h3 className="font-semibold text-xl mb-4">Security &amp; Trust</h3>
                     <div className="grid grid-cols-2 gap-4">
                         {securityFeatures.map((feature, index) => (
                             <div key={index} className="flex items-center space-x-3">
@@ -525,69 +525,67 @@ const HappyCustomersSection = () => {
 
 const GetQuoteSection = () => {
     return (
-        <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
-            <div className="container">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get Your Quote Today</h2>
-                    <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
-                        Ready to save big on quality OEM parts? Contact our experts for a personalized quote and let us help you find exactly what you need.
-                    </p>
-                </div>
-                <div className="grid lg:grid-cols-5 gap-12">
-                    <div className="lg:col-span-3">
-                      <Card className="p-6 md:p-8">
-                        <form className="space-y-4">
-                          <div className="grid sm:grid-cols-2 gap-4">
-                            <Input placeholder="John Smith *" required />
-                            <Input type="tel" placeholder="(555) 123-4567" />
-                          </div>
-                          <Input type="email" placeholder="john@example.com *" required />
-                          <Textarea placeholder="Tell us about the part you need - include your vehicle year, make, model, and specific part requirements... *" required rows={5}/>
-                          <Button type="submit" className="w-full" size="lg">Send My Quote Request</Button>
-                          <p className="text-xs text-muted-foreground text-center">* Required fields. We typically respond within 2 hours during business hours.</p>
-                        </form>
-                      </Card>
-                    </div>
-                    <div className="lg:col-span-2 space-y-8">
-                        <div>
-                          <h3 className="font-semibold text-lg mb-2">Contact Information</h3>
-                          <div className="space-y-4">
-                              <div className="flex items-start">
-                                <Phone className="h-5 w-5 mr-3 mt-1 text-muted-foreground" />
-                                <div>
-                                  <h4 className="font-medium">Call Us</h4>
-                                  <p className="text-sm text-muted-foreground">+1 (979) 452-4280</p>
-                                  <p className="text-sm text-muted-foreground">+1 (972) 419-4504</p>
-                                </div>
-                              </div>
-                              <div className="flex items-start">
-                                <Mail className="h-5 w-5 mr-3 mt-1 text-muted-foreground" />
-                                <div>
-                                  <h4 className="font-medium">Email Us</h4>
-                                  <p className="text-sm text-muted-foreground">info@connectglobalauto.site</p>
-                                  <p className="text-sm text-muted-foreground">quotes@connectglobalauto.site</p>
-                                </div>
-                              </div>
-                               <div className="flex items-start">
-                                <Clock10 className="h-5 w-5 mr-3 mt-1 text-muted-foreground" />
-                                <div>
-                                  <h4 className="font-medium">Business Hours</h4>
-                                  <p className="text-sm text-muted-foreground">Mon-Fri: 7AM-9PM EST</p>
-                                   <p className="text-sm text-muted-foreground">24/7 Online Ordering</p>
-                                </div>
-                              </div>
-                          </div>
+      <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">Get Your Quote Today</h2>
+            <p className="mx-auto mt-4 max-w-2xl text-muted-foreground md:text-lg">
+              Ready to save big on quality OEM parts? Contact our experts for a personalized quote and let us help you find exactly what you need.
+            </p>
+          </div>
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <Card className="p-6 md:p-8 shadow-xl">
+              <CardHeader>
+                <CardTitle className="font-headline">Request a Quote</CardTitle>
+                <CardDescription>We typically respond within 2 business hours.</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form className="space-y-4">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <Input placeholder="Your Name *" required />
+                    <Input type="email" placeholder="Your Email *" required />
+                  </div>
+                  <Input type="tel" placeholder="Your Phone" />
+                  <Textarea placeholder="Tell us about the part you need - include your vehicle year, make, model, and specific part requirements... *" required rows={5}/>
+                  <Button type="submit" className="w-full" size="lg">Send Quote Request</Button>
+                </form>
+              </CardContent>
+            </Card>
+            <div className="space-y-8">
+                <Card>
+                    <CardHeader>
+                        <CardTitle className="font-headline">Contact Information</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-6">
+                        <div className="flex items-start">
+                            <Phone className="h-6 w-6 mr-4 mt-1 text-primary" />
+                            <div>
+                            <h4 className="font-semibold">Call Us</h4>
+                            <p className="text-muted-foreground">+1 (979) 452-4280</p>
+                            <p className="text-muted-foreground">+1 (972) 419-4504</p>
+                            </div>
                         </div>
-                        <div>
-                          <Card className="bg-secondary p-6 text-center">
-                            <h4 className="font-semibold">Need Parts Right Now?</h4>
-                            <p className="text-sm text-muted-foreground mt-1">Call our experts for immediate assistance.</p>
-                            <Button className="mt-4 w-full"><Phone className="mr-2"/> Call +1 (979) 452-4280</Button>
-                          </Card>
+                        <div className="flex items-start">
+                            <Mail className="h-6 w-6 mr-4 mt-1 text-primary" />
+                            <div>
+                            <h4 className="font-semibold">Email Us</h4>
+                            <p className="text-muted-foreground">info@connectglobalauto.site</p>
+                            <p className="text-muted-foreground">quotes@connectglobalauto.site</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                        <div className="flex items-start">
+                            <Clock10 className="h-6 w-6 mr-4 mt-1 text-primary" />
+                            <div>
+                            <h4 className="font-semibold">Business Hours</h4>
+                            <p className="text-muted-foreground">Mon-Fri: 7AM-9PM EST</p>
+                            <p className="text-muted-foreground">24/7 Online Ordering</p>
+                            </div>
+                        </div>
+                    </CardContent>
+                </Card>
             </div>
-        </section>
+          </div>
+        </div>
+      </section>
     );
 }
