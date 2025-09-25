@@ -77,6 +77,12 @@
       "description": "Portrait of Robert Kim",
       "imageUrl": "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg3MDg5NTd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "man portrait"
+    },
+    {
+      "id": "contact-us",
+      "description": "Customer service representative helping a client",
+      "imageUrl": "https://images.unsplash.com/photo-1556740749-887f6717d7e4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjdXN0b21lciUyMHNlcnZpY2V8ZW58MHx8fHwxNzU4ODg0MzA0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "customer service"
     }
   ]
 }

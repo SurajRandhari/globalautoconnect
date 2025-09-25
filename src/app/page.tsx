@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -212,7 +213,7 @@ const PremiumPartsSection = () => (
                                 </CardHeader>
                                 <CardContent className="p-6">
                                     <CardTitle className="font-headline text-xl">{part.title}</CardTitle>
-                                    <CardDescription className="mt-2">{part.description}</CardDescription>
+                                    <CardDescription className="mt-2 text-foreground">{part.description}</CardDescription>
                                     <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
                                         {part.features.map(feature => (
                                             <li key={feature} className="flex items-center">
@@ -524,6 +525,7 @@ const HappyCustomersSection = () => {
 }
 
 const GetQuoteSection = () => {
+    const contactImage = PlaceHolderImages.find(p => p.id === 'contact-us');
     return (
       <section id="get-quote" className="py-16 md:py-24 bg-gradient-to-b from-background to-secondary/20">
         <div className="container">
@@ -533,59 +535,53 @@ const GetQuoteSection = () => {
               Ready to save big on quality OEM parts? Contact our experts for a personalized quote and let us help you find exactly what you need.
             </p>
           </div>
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <Card className="p-6 md:p-8 shadow-xl">
-              <CardHeader>
-                <CardTitle className="font-headline">Request a Quote</CardTitle>
-                <CardDescription>We typically respond within 2 business hours.</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form className="space-y-4">
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    <Input placeholder="Your Name *" required />
-                    <Input type="email" placeholder="Your Email *" required />
+          <Card className="overflow-hidden lg:grid lg:grid-cols-2 lg:gap-0 shadow-xl">
+            <CardContent className="p-6 md:p-10 flex flex-col justify-center">
+              <h3 className="font-headline text-2xl font-bold mb-2">Request a Quote</h3>
+              <p className="text-muted-foreground mb-6">We typically respond within 2 business hours.</p>
+              <form className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <Input placeholder="Your Name *" required />
+                  <Input type="email" placeholder="Your Email *" required />
+                </div>
+                <Input type="tel" placeholder="Your Phone" />
+                <Textarea placeholder="Tell us about the part you need - include your vehicle year, make, model, and specific part requirements... *" required rows={5}/>
+                <Button type="submit" className="w-full" size="lg">Send Quote Request</Button>
+              </form>
+            </CardContent>
+            <div className="relative min-h-[300px] lg:min-h-full">
+              {contactImage &&
+                <Image
+                    src={contactImage.imageUrl}
+                    alt={contactImage.description}
+                    fill
+                    className="object-cover"
+                    data-ai-hint={contactImage.imageHint}
+                />
+              }
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
+              <div className="absolute bottom-0 left-0 p-8 text-white">
+                <h3 className="font-headline text-2xl font-bold">Contact Information</h3>
+                <div className="mt-4 space-y-4 text-sm">
+                  <div className="flex items-center">
+                      <Phone className="h-5 w-5 mr-3" />
+                      <span>+1 (979) 452-4280</span>
                   </div>
-                  <Input type="tel" placeholder="Your Phone" />
-                  <Textarea placeholder="Tell us about the part you need - include your vehicle year, make, model, and specific part requirements... *" required rows={5}/>
-                  <Button type="submit" className="w-full" size="lg">Send Quote Request</Button>
-                </form>
-              </CardContent>
-            </Card>
-            <div className="space-y-8">
-                <Card>
-                    <CardHeader>
-                        <CardTitle className="font-headline">Contact Information</CardTitle>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                        <div className="flex items-start">
-                            <Phone className="h-6 w-6 mr-4 mt-1 text-primary" />
-                            <div>
-                            <h4 className="font-semibold">Call Us</h4>
-                            <p className="text-muted-foreground">+1 (979) 452-4280</p>
-                            <p className="text-muted-foreground">+1 (972) 419-4504</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start">
-                            <Mail className="h-6 w-6 mr-4 mt-1 text-primary" />
-                            <div>
-                            <h4 className="font-semibold">Email Us</h4>
-                            <p className="text-muted-foreground">info@connectglobalauto.site</p>
-                            <p className="text-muted-foreground">quotes@connectglobalauto.site</p>
-                            </div>
-                        </div>
-                        <div className="flex items-start">
-                            <Clock10 className="h-6 w-6 mr-4 mt-1 text-primary" />
-                            <div>
-                            <h4 className="font-semibold">Business Hours</h4>
-                            <p className="text-muted-foreground">Mon-Fri: 7AM-9PM EST</p>
-                            <p className="text-muted-foreground">24/7 Online Ordering</p>
-                            </div>
-                        </div>
-                    </CardContent>
-                </Card>
+                  <div className="flex items-center">
+                      <Mail className="h-5 w-5 mr-3" />
+                      <span>info@connectglobalauto.site</span>
+                  </div>
+                  <div className="flex items-center">
+                      <Clock10 className="h-5 w-5 mr-3" />
+                      <span>Mon-Fri: 7AM-9PM EST</span>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </Card>
         </div>
       </section>
     );
 }
+
+    
